@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Little World ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section id="intro" class="intro">
+        <p class="eyebrow">
+            A tiny universe made for you
+        </p>
+
+        <h1>
+            <span class="intro-line">Welcome to my little world</span>
+            <span class="intro-line">
+               ♡ <span id="introName">Ganis Bunga Oktafiani</span> ♡
+            </span>
+        </h1>
+
+        <p>
+            Setiap bagian di sini menyimpan sedikit rasa sayangku.
+        </p>
+
+        <button id="enterBtn">Enter My Little World</button>
+    </section>
+
+
+    <main id="app" class="hidden">
+
+        <section class="hero section">
+            <div>
+                <p class="eyebrow">
+                    Happy birthday, my favorite person
+                </p>
+
+                <h2>
+                    For <span data-name>Sayang</span>, with all my heart.
+                </h2>
+
+                <p id="heroMessage"></p>
+
+                <a class="button" href="#story">
+                    Mulai perjalanan ↓
+                </a>
+            </div>
+
+            <img
+                id="mainPhoto"
+                class="main-photo"
+                alt="Foto utama"
+            >
+        </section>
+
+
+        <section class="section counters">
+
+            <div class="counter-card">
+                <span>Our story</span>
+
+                <strong id="relationshipCounter">
+                    ∞
+                </strong>
+
+                <small>
+                    hari yang ingin terus kutambah
+                </small>
+            </div>
+
+
+            <div class="counter-card">
+                <span>Your birthday</span>
+
+                <strong id="birthdayCounter">
+                    ♡
+                </strong>
+
+                <small id="birthdayLabel">
+                    hari spesialmu
+                </small>
+            </div>
+
+        </section>
+
+
+        <section id="story" class="section">
+
+            <p class="eyebrow">
+                Swipe through our memories
+            </p>
+
+            <h2>
+                Little moments, big feelings.
+            </h2>
+
+            <div
+                id="storyFeed"
+                class="story-feed"
+            ></div>
+
+        </section>
+
+
+        <section class="section">
+
+            <p class="eyebrow">
+                Scrapbook
+            </p>
+
+            <h2>
+                Our favorite frames
+            </h2>
+
+            <div
+                id="scrapbook"
+                class="scrapbook"
+            ></div>
+
+
+            <div
+                id="lightbox"
+                class="lightbox hidden"
+            >
+
+                <button id="closeLightbox">
+                    Tutup ×
+                </button>
+
+                <img
+                    id="lightboxImage"
+                    alt="Foto diperbesar"
+                >
+
+            </div>
+
+        </section>
+
+
+        <section class="section garden-section">
+
+            <p class="eyebrow">
+                Tap to discover
+            </p>
+
+            <h2>
+                A little garden of messages
+            </h2>
+
+            <p class="muted">
+                Sentuh bunga atau kupu-kupu untuk menemukan pesan kecil.
+            </p>
+
+            <div
+                id="garden"
+                class="garden"
+            ></div>
+
+            <p
+                id="gardenNote"
+                class="garden-note"
+            >
+                Pilih satu bunga ♡
+            </p>
+
+        </section>
+
+
+        <section class="section letter-section">
+
+            <div
+                id="envelope"
+                class="envelope"
+                role="button"
+                tabindex="0"
+                aria-label="Buka surat cinta"
+            >
+
+                <div class="flap"></div>
+
+                <div class="body">
+                    ♡
+                </div>
+
+            </div>
+
+
+            <article
+                id="letter"
+                class="letter hidden"
+            >
+
+                <p class="eyebrow">
+                    A letter from me
+                </p>
+
+                <h2>
+                    Untuk <span data-name>Sayang</span>,
+                </h2>
+
+                <p id="letterContent"></p>
+
+                <p class="signature">
+                    <span id="senderName">Aku</span> ♡
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <section class="section reveal-section">
+
+            <p class="eyebrow">
+                No quiz, just love
+            </p>
+
+            <h2>
+                Tap a heart to reveal a message.
+            </h2>
+
+            <div
+                id="heartMessages"
+                class="heart-messages"
+            ></div>
+
+            <p
+                id="revealedMessage"
+                class="revealed-message"
+            >
+                Pilih satu hati untuk membaca pesanku.
+            </p>
+
+        </section>
+
+
+        <section class="section secret-section">
+
+            <p class="eyebrow">
+                One last little game
+            </p>
+
+            <h2>
+                Find the hidden heart.
+            </h2>
+
+            <p class="muted">
+                Tekan hati yang bersembunyi di antara bintang-bintang.
+            </p>
+
+            <div
+                id="secretBoard"
+                class="secret-board"
+            ></div>
+
+            <p
+                id="secretResult"
+                class="revealed-message"
+            ></p>
+
+        </section>
+
+
+        <section class="section wishes">
+
+            <p class="eyebrow">
+                My wishes for you
+            </p>
+
+            <h2>
+                Semoga dunia memperlakukanmu dengan lembut,
+                seperti aku yang selalu ingin menjagamu.
+            </h2>
+
+            <div
+                id="wishes"
+                class="wishes-grid"
+            ></div>
+
+        </section>
+
+
+        <section class="final section">
+
+            <p>
+                Jika suatu hari kamu lupa betapa berharganya dirimu,
+            </p>
+
+            <h2>
+                kembali ke sini dan ingat bahwa kamu dicintai.
+            </h2>
+
+            <strong>
+                I LOVE YOU ♡
+            </strong>
+
+            <button id="replayBtn">
+                Replay experience
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <button
+        id="musicBtn"
+        class="music-btn"
+    >
+        ♫
+    </button>
+
+
+    <audio
+        id="music"
+        loop
+    ></audio>
+
+
+    <div
+        id="toast"
+        class="toast"
+    ></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

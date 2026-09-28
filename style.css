@@ -1,0 +1,1453 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Great+Vibes&display=swap');
+
+:root {
+    --bg: #100912;
+    --panel: #211321;
+    --rose: #f7a8cb;
+    --rose-light: #ffd9e9;
+    --muted: #cbb8c7;
+    --line: #56334a;
+    --dark-text: #2a1020;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background:
+        radial-gradient(
+            circle at top,
+            #3b1732,
+            #100912 55%
+        );
+    color: #fff2f8;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: clamp(3rem, 10vw, 7rem);
+}
+
+h2 {
+    font-size: clamp(2.4rem, 7vw, 5rem);
+}
+
+button,
+.button {
+    border: 1px solid var(--rose);
+    background: var(--rose);
+    color: var(--dark-text);
+    padding: 0.8rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+button:active,
+.button:active {
+    transform: scale(0.96);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#app {
+    display: none;
+}
+
+#app.show {
+    display: block;
+}
+
+#intro.hidden {
+    display: none !important;
+}
+
+/* =========================
+   INTRO / COVER
+========================= */
+
+.intro {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    text-align: center;
+
+    padding: 2rem;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(125, 45, 91, 0.55),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #2d1329 0%,
+            #100912 75%
+        );
+}
+
+.intro h1 {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto 1.5rem;
+
+    text-align: center;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(
+            3rem,
+            7vw,
+            6.5rem
+        );
+
+    line-height: 0.9;
+
+    font-weight: 600;
+
+    letter-spacing: -0.02em;
+}
+
+.intro-line {
+    display: block;
+
+    width: 100%;
+
+    white-space: normal;
+}
+
+.intro p:not(.eyebrow) {
+    width: 100%;
+    max-width: 600px;
+
+    margin:
+        0 auto
+        1.8rem;
+
+    color: var(--muted);
+
+    font-size: 1rem;
+}
+
+.intro .eyebrow {
+    margin:
+        0 auto
+        1rem;
+
+    color: var(--rose);
+
+    letter-spacing:
+        0.18em;
+
+    text-transform:
+        uppercase;
+
+    font-size:
+        0.72rem;
+}
+
+#enterBtn {
+    width:
+        min(
+            90%,
+            500px
+        );
+
+    min-height: 52px;
+
+    margin: 0 auto;
+
+    padding:
+        0.85rem
+        1.5rem;
+
+    border:
+        1px solid var(--rose);
+
+    border-radius: 999px;
+
+    background:
+        var(--rose);
+
+    color:
+        var(--dark-text);
+
+    font-size:
+        0.95rem;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 35px
+        rgba(
+            247,
+            168,
+            203,
+            0.2
+        );
+}
+
+/* Dekorasi hati */
+
+.intro::before,
+.intro::after {
+    content: "♡";
+
+    position: absolute;
+
+    z-index: -1;
+
+    color:
+        rgba(
+            247,
+            168,
+            203,
+            0.10
+        );
+
+    font-size: 8rem;
+
+    pointer-events: none;
+}
+
+.intro::before {
+    top: 8%;
+    left: -2rem;
+}
+
+.intro::after {
+    right: -2rem;
+    bottom: 8%;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 6rem 1.2rem;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: grid;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.hero p {
+    color: var(--muted);
+}
+
+.hero h2 {
+    margin-bottom: 1.2rem;
+}
+
+.main-photo {
+    width: 100%;
+    max-height: 650px;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: 1.5rem;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   COUNTERS
+========================= */
+
+.counters {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 1rem;
+}
+
+.counter-card {
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+
+    border-radius: 1rem;
+
+    padding: 1.5rem;
+
+    text-align: center;
+}
+
+.counter-card span,
+.counter-card small {
+    display: block;
+
+    color: var(--muted);
+}
+
+.counter-card strong {
+    display: block;
+
+    color: var(--rose);
+
+    font-size: clamp(
+        2rem,
+        6vw,
+        4rem
+    );
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story-feed {
+    display: flex;
+
+    gap: 1rem;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    overscroll-behavior-x: contain;
+
+    padding: 1rem 0 1.5rem;
+
+    scrollbar-width: none;
+}
+
+.story-feed::-webkit-scrollbar {
+    display: none;
+}
+
+.story-card {
+    flex: 0 0 82%;
+
+    max-width: 400px;
+
+    scroll-snap-align: center;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+
+    border-radius: 1.2rem;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.story-card img {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+}
+
+.story-card div {
+    padding: 1rem;
+}
+
+.story-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.story-card p {
+    margin-bottom: 0;
+
+    color: var(--muted);
+}
+
+/* =========================
+   SCRAPBOOK
+========================= */
+
+.scrapbook {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1.2rem;
+
+    padding: 0.5rem;
+}
+
+.scrapbook button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.scrapbook img {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    background: #fff;
+
+    padding:
+        0.5rem
+        0.5rem
+        1.8rem;
+
+    transform: rotate(-2deg);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.2s ease;
+}
+
+.scrapbook img:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.scrapbook img:active {
+    transform:
+        scale(0.97)
+        rotate(0);
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(9, 5, 9, 0.95);
+
+    z-index: 100;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 1rem;
+
+    backdrop-filter: blur(8px);
+}
+
+.lightbox img {
+    width: auto;
+
+    max-width: 95vw;
+    max-height: 80vh;
+    max-height: 80svh;
+
+    object-fit: contain;
+
+    border-radius: 0.8rem;
+}
+
+.lightbox button {
+    position: fixed;
+
+    top: 1rem;
+    right: 1rem;
+
+    z-index: 101;
+
+    min-width: 46px;
+    min-height: 46px;
+
+    padding: 0.5rem 0.8rem;
+}
+
+/* =========================
+   GARDEN
+========================= */
+
+.garden {
+    text-align: center;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1rem;
+
+    padding: 2rem 0;
+}
+
+.garden button {
+    min-height: 70px;
+
+    font-size: 2rem;
+
+    background: var(--panel);
+
+    color: var(--rose);
+
+    border-color: var(--line);
+}
+
+.garden-note,
+.revealed-message {
+    text-align: center;
+
+    color: var(--rose-light);
+
+    font-size: 1.1rem;
+}
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope {
+    width: 240px;
+    height: 160px;
+
+    margin: auto;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.envelope .body {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3aac8,
+            #d984ad
+        );
+
+    color: #70264c;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 4rem;
+
+    border-radius: 0.5rem;
+}
+
+.flap {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 0;
+    right: 0;
+    top: 0;
+
+    border-left:
+        120px solid transparent;
+
+    border-right:
+        120px solid transparent;
+
+    border-top:
+        85px solid #d984ad;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+
+    padding: 2rem;
+
+    border-radius: 1rem;
+
+    max-width: 750px;
+
+    margin: 2rem auto;
+}
+
+.letter p {
+    color: var(--muted);
+}
+
+.signature {
+    font-family:
+        'Great Vibes',
+        cursive !important;
+
+    color: var(--rose) !important;
+
+    font-size: 2rem;
+}
+
+/* =========================
+   HEART MESSAGES
+========================= */
+
+.heart-messages {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    flex-wrap: wrap;
+}
+
+.heart-messages button {
+    min-width: 58px;
+    min-height: 58px;
+
+    background: var(--panel);
+
+    color: var(--rose);
+
+    border-color: var(--line);
+
+    font-size: 2rem;
+}
+
+/* =========================
+   SECRET GAME
+========================= */
+
+.secret-board {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 0.5rem;
+
+    max-width: 500px;
+
+    margin: 2rem auto;
+}
+
+.secret-board button {
+    min-height: 55px;
+
+    background: var(--panel);
+
+    color: var(--rose);
+
+    border-color: var(--line);
+
+    font-size: 1.5rem;
+
+    padding: 0.6rem;
+}
+
+/* =========================
+   WISHES
+========================= */
+
+.wishes-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1rem;
+}
+
+.wish,
+.wish-card {
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+
+    border-radius: 1rem;
+
+    padding: 1.2rem;
+
+    color: var(--muted);
+
+    text-align: center;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+    text-align: center;
+
+    max-width: none;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: grid;
+
+    place-content: center;
+
+    padding:
+        6rem
+        1.2rem;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(247, 168, 203, 0.12),
+            transparent 40%
+        ),
+        linear-gradient(
+            #10091200,
+            #4d1c3d
+        );
+}
+
+.final p {
+    max-width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    color: var(--muted);
+}
+
+.final h2 {
+    max-width: 900px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.final strong {
+    display: block;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    color: var(--rose);
+
+    font-size:
+        clamp(
+            4rem,
+            12vw,
+            9rem
+        );
+
+    margin: 2rem;
+}
+
+#replayBtn {
+    justify-self: center;
+
+    min-height: 48px;
+
+    padding:
+        0.8rem
+        1.3rem;
+
+    border:
+        1px solid var(--rose);
+
+    background: transparent;
+
+    color: var(--rose-light);
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn {
+    position: fixed;
+
+    bottom:
+        max(
+            1rem,
+            env(safe-area-inset-bottom)
+        );
+
+    right: 1rem;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    z-index: 90;
+
+    border:
+        1px solid var(--rose);
+
+    background:
+        rgba(33, 19, 33, 0.92);
+
+    color: var(--rose);
+
+    font-size: 1.2rem;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+    position: fixed;
+
+    bottom: 5rem;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    background: #fff2f8;
+
+    color: var(--dark-text);
+
+    padding:
+        0.7rem
+        1rem;
+
+    border-radius: 999px;
+
+    display: none;
+
+    max-width: 90vw;
+
+    text-align: center;
+
+    z-index: 95;
+}
+
+.toast.show {
+    display: block;
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 750px) {
+
+    .hero {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .story-card {
+        flex-basis: 40%;
+    }
+}
+
+/* =========================
+   TABLET / HP
+========================= */
+
+@media (max-width: 700px) {
+
+    .section {
+        padding:
+            4.5rem
+            1rem;
+    }
+
+    /* COVER */
+
+    .intro {
+        min-height: 100svh;
+
+        padding:
+            1.5rem
+            1rem;
+    }
+
+    .intro h1 {
+        font-size:
+            clamp(
+                2.8rem,
+                13vw,
+                4.5rem
+            );
+
+        line-height: 0.9;
+
+        letter-spacing:
+            -0.02em;
+
+        margin-bottom:
+            1.4rem;
+    }
+
+    .intro-line {
+        display: block;
+
+        width: 100%;
+
+        white-space: normal;
+    }
+
+    .intro .eyebrow {
+        font-size: 0.58rem;
+
+        letter-spacing:
+            0.15em;
+
+        margin-bottom:
+            0.9rem;
+    }
+
+    .intro p:not(.eyebrow) {
+        max-width: 310px;
+
+        margin:
+            0 auto
+            1.5rem;
+
+        font-size: 0.85rem;
+
+        line-height: 1.6;
+    }
+
+    #enterBtn {
+        width: 90%;
+
+        max-width: 340px;
+
+        min-height: 50px;
+
+        padding:
+            0.8rem
+            1rem;
+
+        font-size: 0.85rem;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+
+        padding-top:
+            4rem;
+
+        padding-bottom:
+            4rem;
+    }
+
+    .hero h2 {
+        font-size:
+            clamp(
+                2.5rem,
+                11vw,
+                4rem
+            );
+    }
+
+    .main-photo {
+        max-height: none;
+
+        aspect-ratio:
+            4 / 5;
+
+        border-radius:
+            1.2rem;
+    }
+
+    /* COUNTERS */
+
+    .counters {
+        grid-template-columns: 1fr;
+
+        gap: 0.8rem;
+    }
+
+    .counter-card {
+        padding: 1.2rem;
+    }
+
+    /* STORY */
+
+    .story-feed {
+        margin-right: -1rem;
+        margin-left: -1rem;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .story-card {
+        flex:
+            0 0
+            84vw;
+
+        max-width:
+            360px;
+    }
+
+    /* SCRAPBOOK */
+
+    .scrapbook {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            1.2rem
+            0.7rem;
+
+        padding:
+            0.5rem
+            0.2rem;
+    }
+
+    /* GARDEN */
+
+    .garden {
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 0.7rem;
+
+        min-height: 260px;
+
+        padding: 1.2rem 0.5rem;
+    }
+
+    .garden button {
+        min-height: 62px;
+
+        font-size: 1.8rem;
+    }
+
+    /* ENVELOPE */
+
+    .envelope {
+        width:
+            min(
+                82vw,
+                280px
+            );
+
+        height:
+            calc(
+                min(82vw, 280px)
+                * 0.666
+            );
+    }
+
+    .flap {
+        border-left:
+            calc(
+                min(82vw, 280px) / 2
+            )
+            solid transparent;
+
+        border-right:
+            calc(
+                min(82vw, 280px) / 2
+            )
+            solid transparent;
+
+        border-top:
+            calc(
+                min(82vw, 280px) * 0.30
+            )
+            solid #d984ad;
+    }
+
+    .envelope .body {
+        font-size:
+            clamp(
+                3rem,
+                14vw,
+                4rem
+            );
+    }
+
+    /* LETTER */
+
+    .letter {
+        padding:
+            1.3rem;
+
+        margin-top:
+            1.5rem;
+
+        border-radius:
+            1.1rem;
+    }
+
+    .letter h2 {
+        font-size:
+            clamp(
+                2.3rem,
+                10vw,
+                3.5rem
+            );
+    }
+
+    .signature {
+        font-size:
+            2rem !important;
+    }
+
+    /* HEARTS */
+
+    .heart-messages {
+        display: grid;
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+        gap: 0.45rem;
+
+        width: 100%;
+    }
+
+    .heart-messages button {
+        min-width: 0;
+
+        width: 100%;
+
+        min-height: 54px;
+
+        padding: 0;
+
+        font-size: 1.65rem;
+    }
+
+    /* SECRET */
+
+    .secret-board {
+        width: 100%;
+
+        max-width: 360px;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 0.5rem;
+    }
+
+    .secret-board button {
+        min-height: 58px;
+
+        font-size: 1.3rem;
+    }
+
+    /* WISHES */
+
+    .wishes-grid {
+        grid-template-columns: 1fr;
+
+        gap: 0.8rem;
+    }
+
+    .wish,
+    .wish-card {
+        padding: 1.1rem;
+    }
+
+    /* FINAL */
+
+    .final {
+        min-height:
+            100svh;
+
+        padding:
+            5rem
+            1rem;
+    }
+
+    .final h2 {
+        font-size:
+            clamp(
+                2.4rem,
+                10vw,
+                4rem
+            );
+    }
+
+    .final strong {
+        font-size:
+            clamp(
+                4rem,
+                18vw,
+                7rem
+            );
+
+        margin:
+            1.7rem
+            0;
+    }
+
+    /* MUSIC */
+
+    .music-btn {
+        width: 48px;
+        height: 48px;
+
+        right: 0.9rem;
+        bottom: 0.9rem;
+    }
+}
+
+/* =========================
+   SMALL HP
+========================= */
+
+@media (max-width: 430px) {
+
+    .section {
+        padding:
+            4rem
+            0.9rem;
+    }
+
+    /* COVER */
+
+    .intro {
+        padding:
+            1.2rem
+            0.8rem;
+    }
+
+    .intro h1 {
+        font-size:
+            2.65rem;
+
+        line-height:
+            0.9;
+    }
+
+    .intro .eyebrow {
+        font-size:
+            0.52rem;
+
+        letter-spacing:
+            0.14em;
+    }
+
+    .intro p:not(.eyebrow) {
+        max-width:
+            280px;
+
+        font-size:
+            0.78rem;
+    }
+
+    #enterBtn {
+        width: 92%;
+
+        max-width:
+            310px;
+
+        min-height:
+            48px;
+
+        font-size:
+            0.8rem;
+    }
+
+    /* COUNTERS */
+
+    .counter-card strong {
+        font-size:
+            2.5rem;
+    }
+
+    /* STORY */
+
+    .story-card {
+        flex-basis:
+            88vw;
+    }
+
+    /* SCRAPBOOK */
+
+    .scrapbook {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            1rem
+            0.65rem;
+    }
+
+    /* GARDEN */
+
+    .garden {
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap:
+            0.5rem;
+    }
+
+    .garden button {
+        min-height:
+            58px;
+
+        font-size:
+            1.6rem;
+    }
+
+    /* HEART */
+
+    .heart-messages {
+        gap:
+            0.35rem;
+    }
+
+    .heart-messages button {
+        min-height:
+            50px;
+
+        font-size:
+            1.5rem;
+    }
+
+    /* SECRET */
+
+    .secret-board {
+        gap:
+            0.4rem;
+    }
+
+    .secret-board button {
+        min-height:
+            52px;
+
+        font-size:
+            1.2rem;
+    }
+
+    /* FINAL */
+
+    .final {
+        padding:
+            4rem
+            0.9rem;
+    }
+
+    .final strong {
+        font-size:
+            4.5rem;
+
+        margin:
+            1.5rem
+            0;
+    }
+}
+
+/* =========================
+   VERY SMALL HP
+========================= */
+
+@media (max-width: 360px) {
+
+    .intro h1 {
+        font-size:
+            2.4rem;
+    }
+
+    .intro p:not(.eyebrow) {
+        font-size:
+            0.75rem;
+    }
+
+    #enterBtn {
+        width:
+            95%;
+    }
+
+    .story-card {
+        flex-basis:
+            90vw;
+    }
+
+    .heart-messages button {
+        min-height:
+            48px;
+
+        font-size:
+            1.4rem;
+    }
+}
